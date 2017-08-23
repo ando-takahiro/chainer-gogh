@@ -1,0 +1,4 @@
+.idea
+*.caffemodel
+__pycache__
+output_dir*/

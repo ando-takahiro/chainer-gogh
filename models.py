@@ -36,9 +36,18 @@ class VGG:
         y3 = self.model.conv3_3(F.relu(self.model.conv3_2(F.relu(self.model.conv3_1(x2)))))
         x3 = F.average_pooling_2d(F.relu(y3), 2, stride=2)
         y4 = self.model.conv4_3(F.relu(self.model.conv4_2(F.relu(self.model.conv4_1(x3)))))
-    #    x4 = F.average_pooling_2d(F.relu(y4), 2, stride=2)
-    #    y5 = model.conv5_3(F.relu(model.conv5_2(F.relu(model.conv5_1(x4)))))
+        # x4 = F.average_pooling_2d(F.relu(y4), 2, stride=2)
+        # y5 = model.conv5_3(F.relu(model.conv5_2(F.relu(model.conv5_1(x4)))))
+        # original
         return [y1,y2,y3,y4]
+        # only shallow layers
+        # return [y1]
+        # only deep layers
+        # return [y4]
+        # middle-1
+        # return [y2]
+        # middle-2
+        # return [y3]
 
 class VGG_chainer:
     def __init__(self, alpha=[0,0,1,1], beta=[1,1,1,1]):
